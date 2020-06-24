@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffc700;
+}
+.nav{
+    background-color: #1e1e1e;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.nav p{
+    font-size: 20px;
+    color: white;
+    width: 100px;
+    text-align: center;
+    padding-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.teste{
+    margin: 0;
+    padding: 0;
+    background-color: #ffc700;
+    height: 70px;
+    color: #1e1e1e;
+}
+.nav .active{
+    color: #1e1e1e;
+}
+.nav-itens{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.nav .row{
+    justify-content: space-around;
+}
+.nav form{
+    height: 100%;
+}
+.nav-login{
+    display: flex;
+    height: 100%;
+}
+.nav-login img{
+    margin-top: auto;
+    margin-bottom: auto;
+    max-height: 50px;
+}
+a:hover{
+    color: rgb(255, 199, 0, 0.5);
+}
+.nav .btn-style{
+    border: #ffc700 1px solid;
+    color: white;
+}
+.nav .btn-style:hover{
+    background-color: #ffc700;
+    color: black;
+}
+.nav .form-control:focus{
+    box-shadow:0 0 0 .2rem rgb(255, 199, 0, 0.4)
+}
+.nav-login h5{
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+

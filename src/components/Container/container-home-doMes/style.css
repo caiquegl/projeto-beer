@@ -1,0 +1,46 @@
+.doMes{
+    margin-top: 30px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+.container-shadow{
+    width: 100%;
+    box-shadow: 0px 8px 5px rgb(242, 116, 5, 0.6);    
+}
+.doMes .text{
+    width: 400px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.doMes-before{
+    margin-top: 6px;
+    display: inline-block;
+    width: 63%;
+    height: 0.65em;
+    border-bottom: 2px solid black;
+    margin-left: 200px;
+}
+.doMes-after{
+    margin-top: 6px;
+    display: inline-block;
+    width: 63%;
+    height: 0.65em;
+    border-bottom: 2px solid black;
+    margin-right: 200px;
+}
+.prop{
+    display: flex;
+    align-items: center;
+    width: 960px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.prop img{
+    width: 1500px;
+}
