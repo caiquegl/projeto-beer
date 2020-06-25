@@ -23,7 +23,7 @@ export default function Home() {
                 <div className="container">
                     <div className="row">
                         <div className="nav-itens">
-                            <Link to="/">
+                            <Link to="/home">
                                 <p className="teste active">Home</p>
                             </Link>
                             <Link to="/cerveja">

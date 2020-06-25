@@ -15,7 +15,7 @@ export default function Cervejas(){
                 <div className="container">
                     <div className="row">
                         <div className="nav-itens">
-                            <Link to="/">
+                            <Link to="/home">
                                 <p >Home</p>
                             </Link>
                             <Link to="/cerveja">

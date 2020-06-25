@@ -1,0 +1,124 @@
+.pg-total{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+#primeiro{
+    opacity: 0;
+    transition: all 2s;
+}
+#segundo{
+    opacity: 1;
+    transition: all 2s;
+}
+
+.form-ocult{
+    display: none;
+}
+.pg-total .primeira-fase{
+    width: 480px;
+    background-color: whitesmoke;
+    padding: 50px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 8px 6px rgb(242, 116, 5, 0.9);
+    -moz-box-shadow:    0px 5px 8px 6px rgb(242, 116, 5, 0.9);
+    box-shadow:         0px 5px 8px 6px  rgb(242, 116, 5, 0.9); 
+}
+.pg-total h2{
+    margin: auto;
+    text-align: center;
+    color: #d32227;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.pg-total p{
+    margin-top: 25px;
+    max-width: 360px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.primeira-fase .btn-entrar{
+    border: #d32227 2px solid;
+    font-weight: bold;
+    margin-left: 38%;
+}
+.primeira-fase .btn-entrar:hover{
+    border: #d32227 2px solid;
+    background-color: #d32227;
+    font-weight: bold;
+    color: black;
+    transition: all 0.5s;
+    margin-left: 38%;
+    box-shadow: 0px 3px 10px black;
+}
+
+.pg-total .segunda-fase{
+    display: none;
+    width: 550px;
+    height: 350px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 8px 6px rgb(242, 116, 5, 0.9);
+    -moz-box-shadow:    0px 5px 8px 6px rgb(242, 116, 5, 0.9);
+    box-shadow:         0px 5px 8px 6px  rgb(242, 116, 5, 0.9);
+}
+.segunda-fase .form-flex{
+    display: flex;
+}
+.segunda-fase .form-flex .btn-entrar{
+    border: #d32227 2px solid;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.segunda-fase .form-flex .btn-entrar:hover{
+    border: #d32227 2px solid;
+    background-color: #d32227;
+    font-weight: bold;
+    color: black;
+    transition: all 0.5s;
+    box-shadow: 0px 3px 10px black;
+}
+
+.segunda-fase .form-control:focus{
+    box-shadow:0 0 0 .2rem rgb(255, 199, 0, 0.4)
+}
+.pg-total .segunda-fase h2{
+    margin-bottom: 40px;
+    font-size: 23px;
+}
+.flex-entrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-entrar .btn-entrar{
+    border: #d32227 2px solid;
+    font-weight: bold;
+    margin: 10px;
+}
+.flex-entrar .btn-entrar:hover{
+    border: #d32227 2px solid;
+    background-color: #d32227;
+    font-weight: bold;
+    color: black;
+    transition: all 0.5s;
+    box-shadow: 0px 3px 10px black;
+}
+.flex-entrar p{
+    font-weight: 400;
+    letter-spacing: normal;
+    font-size: 16px;
+}
+.cadastre p{
+    margin-top: 80px;
+    font-weight: 400;
+    letter-spacing: normal;
+    font-size: 16px;
+    text-decoration: underline;
+    margin-left: 60px;
+}
