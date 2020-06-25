@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 export default function Efeitos(){
@@ -19,7 +21,15 @@ export default function Efeitos(){
             sessionStorage.setItem("nomeVisitante",nomeVisita);
 
         }else{
-            window.alert("Por favor digite seu nome!!!")
+            toast.error('Por favor nos diga seu nome!!!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
         }
 
     }
@@ -27,9 +37,11 @@ export default function Efeitos(){
     function salvarVisitanteInput(e){
         e.preventDefault();
         pegarNome();
-        return window.location.replace("http://localhost:3000/home");
+        // let nome = localStorage.getItem("nomeVisitante");
+        // if (!nome.length > 0){
+        // // return window.location.replace("http://localhost:3000/home");
+        // }
 
-        console.log(sessionStorage.getItem("nomeVisitante"));
     }
     
 
@@ -81,6 +93,7 @@ export default function Efeitos(){
 
     return(
         <div className="pg-total">
+            
 
             {/* começo primeira fase */}
             <div className="primeira-fase" id="primeiro">
@@ -123,6 +136,19 @@ export default function Efeitos(){
             </div>
             {/* termino segunda fase */}
 
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                />
+                {/* Same as */}
+            <ToastContainer />
         </div>
     )
 }
