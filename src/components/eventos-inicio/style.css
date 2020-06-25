@@ -3,6 +3,9 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-image: url("../../assets/bg-beer.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #primeiro{
     opacity: 0;
@@ -11,6 +14,12 @@
 #segundo{
     opacity: 1;
     transition: all 2s;
+}
+#cadastro-visi{
+    display: none;
+}
+#login-visi{
+    display: none;
 }
 
 .form-ocult{
@@ -59,7 +68,8 @@
 .pg-total .segunda-fase{
     display: none;
     width: 550px;
-    height: 350px;
+    min-height: 350px;
+    height: auto;
     padding: 30px;
     background-color: white;
     border-radius: 20px;
@@ -121,4 +131,27 @@
     font-size: 16px;
     text-decoration: underline;
     margin-left: 60px;
+}
+.sem-estilo{
+    background-color: transparent;
+    color: black;
+    border: none;
+    text-decoration: underline;
+    margin-top: 80px;
+    font-weight: bold;
+    letter-spacing: normal;
+    font-size: 16px;
+    margin-left: 60px;
+}
+.btn-cadastrar{
+    background-color: transparent;
+    border: #ffc700 solid 2px;
+    margin-left: 40%;
+    font-weight: bold;
+}
+.btn-cadastrar:hover{
+    background-color: #ffc700;
+    color: black;
+    transition: all 0.5s;
+    box-shadow: 0px 3px 10px black;
 }

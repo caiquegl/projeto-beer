@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 // header
 import {Link} from 'react-router-dom';
@@ -15,6 +15,12 @@ import './style.css';
 
 
 export default function Home() {
+    let capturarNome = sessionStorage.getItem("nomeVisitante");
+    console.log(capturarNome);
+    if(capturarNome == null){
+        capturarNome = "Visitante";
+    }
+
     return(
         <div>
              {/* header */}
@@ -38,7 +44,7 @@ export default function Home() {
                         </div>
                         <div className="nav-login">
                             <img src={Avatar} alt="Visitante"/>
-                            <h5>Login</h5>
+                            <h5>Olá  {capturarNome}</h5>
                             <h5>Registrar</h5>
 
                         </div>
