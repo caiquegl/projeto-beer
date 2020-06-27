@@ -1,0 +1,112 @@
+.div-la{
+    width: 100%;
+    box-shadow: 0px -8px 5px rgb(242, 116, 5, 0.6);
+    background-color: #f5d879;
+    height: 100%;
+    padding-bottom: 50px;
+}
+.pai-categorias{
+    padding-top: 30px;
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+.ordernar{
+    display: flex;
+    height: 30px;
+    justify-content: end;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+.ordernar p{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    
+}
+.ordernar select{
+    border-radius: 5px;
+    border: #dee2e6 2px solid;
+    background-color: #393f45;
+    font-weight: bold;
+    color: #dee2e6;
+}
+.ordernar select option{
+    color: #dee2e6;
+    background-color: #393f45;
+}
+.categorias{
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 10px 10px 10px  rgb(242, 116, 5, 0.65);
+    border: 2px solid #dee2e6;
+}
+
+.categorias h2{
+    color: #a6a6a7;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.categorias ul li{
+   list-style: none;
+}
+.categorias ul li input{
+    margin-right: 15px;
+ }
+ .categorias ul li label{
+    letter-spacing: 0;
+ }
+ .pai-cards{
+     margin-left: 50px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+ }
+ .pai-cards .card{
+     margin-bottom: 40px;
+     width: 230px;
+     box-shadow: 10px 10px 10px  rgb(242, 116, 5, 0.65);
+     
+ }
+ .pai-cards .card .card-body{
+     display: flex;
+     flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    }
+ .pai-cards .card .card-img-top{
+     background-color: #d7d7dc;
+ }
+ .pai-cards .card .card-body{
+     padding-top: 20;
+     padding-left: 0;
+     padding-right: 0;
+     padding-bottom: 0;
+ }
+ .pai-cards .card .card-body p{
+     padding-left: 20px;
+     padding-right: 20px;
+ }
+
+ .mais-info{
+     margin-top: 15px;
+     height: 35px;
+     width: 100%;
+     text-align: center;
+     border: none;
+     background-color: #ccf750;
+     transition: all 0.5s;
+     letter-spacing: 1px;
+ }
+ .mais-info:hover{
+     background-color: #ffc700;
+     font-weight: bold;
+ }
+

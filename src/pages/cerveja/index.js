@@ -8,6 +8,7 @@ import Avatar from '../../assets/avatar-login.png';
 
 import Footer from '../../components/footer/index';
 import CervejasConhecidas from '../../components/Container/cervejasConhecidas/index';
+import Categoria from '../../components/categorias/index';
 
 export default function Cervejas(){
 
@@ -48,6 +49,7 @@ export default function Cervejas(){
     {/* fim do header */}
 
             <CervejasConhecidas />
+            <Categoria />
             <Footer />
         </div>
     )
