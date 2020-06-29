@@ -1,7 +1,10 @@
 .pai-info{
+    display: flex;
+}
+.container-info{
     width: 100%;
     max-width: 1200px;
-    background-color: #f0f8ff;
+    background-color: white;
     border-radius: 20px;
     box-shadow: 10px 10px 10px  rgb(242, 116, 5, 0.9);
     border: #dee2e6 2px solid;
@@ -10,7 +13,6 @@
     margin-top: 50px;
     margin-bottom: 50px;
     padding: 30px;
-    display: flex;
 }
 .foto{
     width: 550px;
@@ -66,3 +68,100 @@ text-align: justify;
     color: #9da6af;
     font-weight: bold;
 }
+.mais-descri{
+    width: 100%;
+    padding: 50px;
+}
+.mais-descri h2{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 29px;
+    font-weight: bold;
+}
+.mais-descri p{
+    color: #9da6af;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.mais-descri h3{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.mais-descri .all-descri{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mais-descri .all-descri section{
+    display: flex;
+    width: auto;
+    margin-bottom: 40px;
+    
+}
+.mais-descri .all-descri img{
+    width: 42px;
+    box-shadow: none;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.mais-descri .all-descri h2{
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+    color: #9da6af;
+}
+.img-copo{
+    border-radius: 0;
+    height: 42px;
+}
+.mais-descri .all-descri p{
+    margin-top: auto;
+    margin-bottom: auto;
+    color: black;
+    font-weight: 400;
+}
+.mais-descri .all-descri .right section{
+    margin-right: 100px;
+}
+
+.cor-dourada{
+    width: 106px !important;
+}
+.temp{
+    height: 42px;
+    width: 19px;
+}
+.amargor{
+    width: 124px !important;
+}
+.harmonizacao h2{
+    text-align: left;    
+}
+.harmonizacao .itens{
+    display: flex;
+}
+.harmonizacao .itens div{
+    margin-left: 30px;
+}
+.harmonizacao .itens img{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90px;
+    height: 50px;
+    border-radius: 30px;
+}
+.harmonizacao .itens p{
+    text-align: center;
+}
+
+
+
