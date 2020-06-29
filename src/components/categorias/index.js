@@ -151,7 +151,7 @@ export default function Categoria(){
                                         A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
                                     </p>
                                 </div>
-                                <button className="mais-info">Mais informações</button>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
                         </div>
                         
@@ -182,7 +182,7 @@ export default function Categoria(){
                                         A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
                                     </p>
                                 </div> 
-                                <button className="mais-info">Mais informações</button>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
                         </div>
 
@@ -197,7 +197,7 @@ export default function Categoria(){
                                         A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
                                     </p>
                                 </div>
-                                <button className="mais-info">Mais informações</button>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
                         </div>
                         
@@ -212,7 +212,7 @@ export default function Categoria(){
                                         A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
                                     </p>
                                 </div>
-                                <button className="mais-info">Mais informações</button>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
                         </div>
                         
@@ -228,7 +228,7 @@ export default function Categoria(){
                                         A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
                                     </p>
                                 </div> 
-                                <button className="mais-info">Mais informações</button>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
                         </div>
                         
@@ -243,7 +243,7 @@ export default function Categoria(){
                                         A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
                                     </p>
                                 </div>
-                                <button className="mais-info">Mais informações</button>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
                         </div>
                         
@@ -258,7 +258,7 @@ export default function Categoria(){
                                         A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
                                     </p>
                                 </div>
-                                <button className="mais-info">Mais informações</button>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
                         </div>
 
@@ -273,7 +273,7 @@ export default function Categoria(){
                                         A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
                                     </p>
                                 </div>
-                                <button className="mais-info">Mais informações</button>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
                         </div>
 
