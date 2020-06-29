@@ -1,5 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Zoom from 'react-img-zoom';
+import { MDBContainer, MDBRating, MDBInput  } from 'mdbreact';
+
 
 // header
 import {Link} from 'react-router-dom';
@@ -35,6 +37,24 @@ import CarneAves from '../../assets/carne-aves.jpg';
 
 
 export default function InfoCerveja(){
+    const [basic] = useState([
+        {
+          tooltip: 'Muito ruim'
+        },
+        {
+          tooltip: 'Ruim'
+        },
+        {
+          tooltip: 'Ok',
+        },
+        {
+          tooltip: 'Boa',
+          choosed: true
+        },
+        {
+          tooltip: 'Excelente'
+        }
+      ]);
 
     let capturarNome = sessionStorage.getItem("nomeVisitante");
     console.log(capturarNome);
@@ -114,6 +134,15 @@ export default function InfoCerveja(){
                             </p>
                             
                     </div>
+                    <div className="coments">
+                        <div className="star">
+                            <MDBContainer>
+                                <MDBRating data={basic}/>
+                                <p>(110)</p>
+                            </MDBContainer>
+                        </div>
+                        <a href="#comentarios">Comentarios (85)</a>
+                    </div>
                 </div>                        
             </div>
 
@@ -190,6 +219,71 @@ export default function InfoCerveja(){
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+
+            <div className="avaliacao" id="comentarios">
+                <h2>Avaliações</h2>
+                <div className="pai-avaliacao">
+                    <div className="star">
+                        <MDBContainer>
+                            <h2>4.5</h2>
+                            <MDBRating data={basic}/>
+                                <p>(110)</p>
+                        </MDBContainer>
+                        <select name="#" id="#">
+                            <option>avaliação mais recente</option>
+                            <option>avaliação mais antiga</option>
+                            <option>avaliação mais positiva</option>
+                            <option>avaliação mais negativa</option>
+                        </select>
+                    </div>
+
+                    <div className="user-comentarios">
+                        <div className="divisao-coments">
+
+                            <div className="comentarios">
+                                <h2>Caique</h2>
+                                <MDBContainer>
+                                    <MDBRating data={basic}/>
+                                </MDBContainer>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure dolore ex distinctio ea enim quod reprehenderit consequatur ducimus delectus. Neque repellat saepe, a tempore sed voluptatibus nobis magni, omnis, qui animi corporis quibusdam aliquid commodi placeat ut accusantium minus dolorem.</p>
+                                <div className="curtir">
+                                    <p>29/06/2020</p>
+                                    <button>Curtir</button>
+                                </div>
+                            </div>
+
+                            <div className="comentarios">
+                                <h2>Caique</h2>
+                                <MDBContainer>
+                                    <MDBRating data={basic}/>
+                                </MDBContainer>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure dolore ex distinctio ea enim quod reprehenderit consequatur ducimus delectus. Neque repellat saepe, a tempore sed voluptatibus nobis magni, omnis, qui animi corporis quibusdam aliquid commodi placeat ut accusantium minus dolorem.</p>
+                                <div className="curtir">
+                                    <p>29/06/2020</p>
+                                    <button>Curtir</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div className="fazer-coment">
+                            <h1>Faça um comentario</h1>
+                            <p>Diga a baixo o que você achou <strong>{capturarNome}</strong>:</p>
+                            <form action="#">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <MDBContainer>
+                                    <MDBRating data={basic}/>
+                                </MDBContainer>
+                                <button>Comentar</button>
+
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

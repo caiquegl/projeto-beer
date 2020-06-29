@@ -71,6 +71,7 @@ text-align: justify;
 .mais-descri{
     width: 100%;
     padding: 50px;
+    border-bottom: #9da6af 2px solid;
 }
 .mais-descri h2{
     text-align: center;
@@ -162,6 +163,150 @@ text-align: justify;
 .harmonizacao .itens p{
     text-align: center;
 }
+.coments{
+    margin-top: 50px;
+}
+.coments .mdb-rating{
+    width: auto;
+    display: flex;
+}
+.coments .star .container{
+    margin-bottom: 40px;
+    display: flex;
+}
+.coments .star p{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #9da6af;
+}
+.coments a{
+    color: #9da6af;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 20px;   
+}
+.avaliacao{
+    text-align: center;
+    margin-top: 50px;
+}
+.avaliacao h2{
+    text-transform: uppercase;
+    color: #9da6af;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+.avaliacao .pai-avaliacao{
+    padding: 20px;
+}
+.avaliacao .pai-avaliacao .star{
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+    border-bottom: #9da6af 1px solid;
+    padding-bottom: 20px;
+}
+.avaliacao .pai-avaliacao .star .container{
+    display: flex;
+    width: 100% !important;
+}
+.avaliacao .pai-avaliacao .star .container p{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.avaliacao .pai-avaliacao .star .container h2{
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.avaliacao .pai-avaliacao .star select{
+    height: 35px;
+}
+.user-comentarios{
+    display: flex;
+}
+.comentarios{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 500px;
+    border-bottom: #9da6af 1px solid;
+    padding-bottom: 30px;
+}
+.comentarios h2{
+    margin: 0;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.comentarios p{
+    text-align: justify;
+    padding-left: 20px;
+}
+.comentarios .curtir{
+    display: flex;
+}
+.comentarios .curtir p{
+    font-weight: bold;
+    color: #9da6af;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.comentarios .curtir button{
+    height: 30px;
+    background: transparent;
+    border: #ffc700 2px solid;
+    width: 80px;
+    border-radius: 6px;
+    transition: all 0.5s;
+}
+.comentarios .curtir button:hover{
+    background: blueviolet;
+    border: blueviolet 2px solid;
+    color: white;
+}
+.divisao-coments{
+    border-right: #9da6af 1px solid;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+.fazer-coment{
+    padding-top: 50px;
+    padding-left: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.fazer-coment h1{
+    font-size: 25px;
+    color: #9da6af;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.fazer-coment p{
+    color: black;
+    letter-spacing: 1px;
+}
+.fazer-coment textarea{
+    margin-bottom: 30px;
+}
+.fazer-coment button{
+    height: 40px;
+    background: transparent;
+    border: #ffc700 2px solid;
+    width: 100px;
+    border-radius: 6px;
+    transition: all 0.5s;
+}
+.fazer-coment button:hover{
+    background-color: #ffc700;
+}
+
+
+
 
 
 
