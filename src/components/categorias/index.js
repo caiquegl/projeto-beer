@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import { MDBContainer, MDBRating, MDBInput  } from 'mdbreact';
-
 import './style.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
@@ -106,10 +106,27 @@ export default function Categoria(){
                             <input type="checkbox" name="brahma" id="brahma"/> 
                             <label htmlFor="brahma">Brahma</label>
                         </li>
+                        <h2>Curiosidade</h2>
+                        <ul>
+                            <li>
+                                <p> Mais de 100 estudos demonstraram que o consumo moderado de cerveja diminui o risco de ataques cardíacos e morte por doença cardiovascular em 25 a 40%. Um ou dois copos por dia podem ajudar a elevar os níveis de HDL, o chamado “colesterol bom”, que ajuda a prevenir o entupimento das artérias.
+                                </p>
+                            </li>
+                        </ul>
                     </ul>
                 </div>
                 <div className="avo-cards">
                     <div className="ordernar">
+
+                    <div class="btn-toolbar class" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-secondary">1</button>
+                            <button type="button" class="btn btn-secondary">2</button>
+                            <button type="button" class="btn btn-secondary">3</button>
+                            <button type="button" class="btn btn-secondary">4</button>
+                        </div>
+                    </div>
+                    
                         <p>Ordernar por:</p>
                         <select name="ordernar" id="ordernar">
                             <option selected>Selecione</option>
@@ -122,6 +139,52 @@ export default function Categoria(){
                     </div>
 
                     <div className="pai-cards">
+
+                        <div className="card">
+                            <img src={Coopers} className="card-img-top"/>
+                            <div className="card-body">
+                                <div>
+                                    <MDBContainer>
+                                        <MDBRating data={basic}/>
+                                    </MDBContainer>
+                                    <p className="card-text">
+                                        A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
+                                    </p>
+                                </div>
+                                <button className="mais-info">Mais informações</button>
+                            </div>
+                        </div>
+                        
+                        <div className="card">
+                            <img src={Coopers} className="card-img-top"/>
+                            <div className="card-body">
+                                <div>
+                                    <MDBContainer>
+                                        <MDBRating data={basic}/>
+                                    </MDBContainer>
+                                    <p className="card-text">
+                                        A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
+                                    </p>
+                                </div>
+                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
+                            </div>
+                        </div>
+                        
+                        <div className="card">
+                            <img src={Coopers} className="card-img-top"/>
+                            <div className="card-body">
+                                <div>
+                                    <MDBContainer>
+                                        <MDBRating data={basic}/>
+                                    </MDBContainer>
+                                    
+                                    <p className="card-text">
+                                        A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
+                                    </p>
+                                </div> 
+                                <button className="mais-info">Mais informações</button>
+                            </div>
+                        </div>
 
                         <div className="card">
                             <img src={Coopers} className="card-img-top"/>

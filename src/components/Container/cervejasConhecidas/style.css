@@ -71,3 +71,20 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+.ordernar .class{
+    margin-right: 150px;
+}
+.ordernar .class button{
+    margin: 0;
+    height: 35px;
+    width: 60px;
+    text-align: center;
+    color: black;
+    padding: 10px;
+    background-color: #ffc700 !important;
+    transition: all 0.5s;
+}
+.ordernar .class button:hover{
+    background-color: #1e1e1e !important;
+    color: white;
+}

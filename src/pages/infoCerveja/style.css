@@ -1,0 +1,68 @@
+.pai-info{
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f0f8ff;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px  rgb(242, 116, 5, 0.9);
+    border: #dee2e6 2px solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    display: flex;
+}
+.foto{
+    width: 550px;
+    border-right: #9da6af 2px solid;
+}
+.info-zoom{
+    display: flex;
+    margin-top: 5px;
+}
+.info-zoom img{
+    width: 20px;
+    height: 20px;
+    margin-right: 50px;
+}
+.info-zoom p{
+    font-size: 14px;
+    font-weight: bold;
+    color: #9da6af;
+}
+.info-descri{
+padding: 40px;
+text-align: justify;
+
+}
+.info-descri h2{
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+.info-descri p{
+    color:  black;
+    font-size: .9em;
+}
+.info-descri .descri{
+    padding-bottom: 15px;
+    border-bottom: #9da6af 2px solid;
+}
+.info-descri .dados{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.info-descri .dados img{
+    max-width: 34px;
+    /* margin-right: 30px; */
+}
+.info-descri .dados p{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 14px;
+    color: #9da6af;
+    font-weight: bold;
+}

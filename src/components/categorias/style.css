@@ -57,6 +57,10 @@
 .categorias ul li{
    list-style: none;
 }
+.categorias ul li p{
+    text-align: justify;
+    letter-spacing: 1px;
+}
 .categorias ul li input{
     margin-right: 15px;
  }
