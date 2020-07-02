@@ -44,3 +44,26 @@
 .prop img{
     width: 1500px;
 }
+@media (max-width: 700px){
+    
+    .container-shadow{
+        box-shadow: none;
+        width: 100vw;
+    }
+    .prop{
+        width: 100vw;
+        display: block;
+        margin-bottom: 50px;
+        box-shadow: none;
+    }
+    .prop p{
+        width: 100vw;
+        text-align: justify;
+        padding: 20px;
+    }
+    .prop img{
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

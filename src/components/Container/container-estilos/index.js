@@ -36,7 +36,7 @@ export default function ContainerEstilos(porps){
             <div className="flex">
 
 
-            {[ 'right'].map((placement) => (
+            {[ 'top'].map((placement) => (
                     <OverlayTrigger
                     key={placement}
                     placement={placement}
@@ -55,7 +55,7 @@ export default function ContainerEstilos(porps){
 
 
                 
-                {[ 'right'].map((placement) => (
+                {[ 'top'].map((placement) => (
                 <OverlayTrigger
                 key={placement}
                 placement={placement}
@@ -75,7 +75,7 @@ export default function ContainerEstilos(porps){
 
 
 
-                {[ 'right'].map((placement) => (
+                {[ 'top'].map((placement) => (
                     <OverlayTrigger
                     key={placement}
                     placement={placement}
@@ -94,7 +94,7 @@ export default function ContainerEstilos(porps){
                   ))}
                
                 
-               {[ 'right'].map((placement) => (
+               {[ 'top'].map((placement) => (
                     <OverlayTrigger
                     key={placement}
                     placement={placement}

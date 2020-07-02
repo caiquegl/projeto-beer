@@ -57,4 +57,31 @@ section:hover .hover-sombra{
     border-bottom: 2px solid black;
     margin-right: 200px;
 }
-
+@media (max-width: 700px){
+    .estilos-titulo{
+        display: block;
+    }
+    .estilos-titulo .bx{
+        display: none;
+    }
+    .estilos h2{
+        width: 100%;
+    }
+    .estilos .flex{
+        display: block;
+        width: 100%;
+    }
+    .estilos .flex section{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .doMes-before{
+        display: none;
+    }
+    .doMes-after{
+        display: none;
+    }
+    .doMes .text{
+        text-align: center;
+    }
+}

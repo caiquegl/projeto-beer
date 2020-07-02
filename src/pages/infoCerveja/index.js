@@ -85,7 +85,9 @@ export default function InfoCerveja(){
                         <div className="nav-login">
                             <img src={Avatar} alt="Visitante"/>
                             <h5>Olá  {capturarNome}</h5>
-                            <h5>Registrar</h5>
+                            <Link to="/registrar">
+                                <h5>Registrar</h5>
+                            </Link>
 
                         </div>
                     </div>

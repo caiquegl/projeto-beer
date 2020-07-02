@@ -88,3 +88,12 @@
     background-color: #1e1e1e !important;
     color: white;
 }
+@media (max-width: 700px){
+
+    .full-slick{
+        width: 80vw;
+        box-shadow: none;
+        display: none;
+    }
+    
+}

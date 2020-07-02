@@ -114,3 +114,12 @@
      font-weight: bold;
  }
 
+@media (max-width: 700px){
+    .categorias{
+        display: none;
+    }
+    .ordernar{
+        display: block;
+        height: 90px;
+    }
+}

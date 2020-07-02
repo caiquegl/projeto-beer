@@ -1,0 +1,106 @@
+.container-regis{
+    width: 100%;
+    max-width: 1160px;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 10px  rgb(242, 116, 5, 0.9);
+    padding: 50px;
+}
+.pai-regis{
+    display: flex;
+    justify-content: space-between;
+}
+.pai-regis .left{
+    width: 60%;
+}
+.pai-regis .rigth{
+    width: 40%;
+}
+.pai-regis .rigth h2{
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+.pai-regis .rigth ul li{
+    list-style: none;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.container-regis h2{
+    text-align: center;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.container-regis form{
+    width: 100%;
+}
+
+.container-regis form .form-group{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container-regis form .form-group input{
+    width: 400px;
+    height: 40px;
+    padding-left: 10px;
+}
+.container-regis form .form-group label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.container-regis form button{
+    margin-left: 40%;
+    width: 150px;
+    height: 33px;
+    border: #ffc700 2px solid;
+    background-color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+}
+.container-regis form button:hover{
+    background-color: #ffc700;
+    color: black;
+    box-shadow: 5px 10px 20px black;
+}
+
+@media (max-width: 700px){
+    .container-regis{
+        box-shadow: none;
+        width: 100vw;
+    }
+    .pai-regis{
+        display: block;
+    }
+    .pai-regis .left{
+        width: 100%;
+    }
+    .pai-regis .left form{
+        width: 90%;
+    }
+    .pai-regis .left .form-group{
+        width: 100%;
+    }
+    .pai-regis .left .form-group input{
+        width: 110%;
+    }
+    .pai-regis .left button{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 30%;
+    }
+    .pai-regis .rigth{
+        width: 100%;
+    }
+}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 // header
 import {Link} from 'react-router-dom';
@@ -8,33 +8,31 @@ import Logo from '../../assets/logo.png';
 import {Navbar , Nav, Form, Button, FormControl} from 'react-bootstrap';
 // fim do header
 
-import ContainerDoMes from '../../components/Container/container-home-doMes/index';
-import ContainerEstilos from '../../components/Container/container-estilos/index';
 import Footer from '../../components/footer/index';
+import ContainerRegistrar from '../../components/Container/registrar/index';
 
 
-import './style.css';
 
+export default function Registrar(){
 
-export default function Home() {
     let capturarNome = sessionStorage.getItem("nomeVisitante");
     console.log(capturarNome);
     if(capturarNome == null){
         capturarNome = "Visitante";
     }
 
-    return(
+    return (
         <div>
-             {/* header */}
+        {/* header */}
 
 
-             <Navbar  expand="lg" className="nav">
+        <Navbar  expand="lg" className="nav">
                 <Navbar.Brand href="#home"><img src={Logo} id="invertImg"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                    <Nav.Link href="/home" className="nav-itens"><p className="teste">Home</p></Nav.Link>
-                    <Nav.Link href="/cerveja"><p>Cerveja</p></Nav.Link>
+                    <Nav.Link href="/home" className="nav-itens"><p >Home</p></Nav.Link>
+                    <Nav.Link href="/cerveja"><p className="teste">Cerveja</p></Nav.Link>
                     </Nav>
                     <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -52,11 +50,8 @@ export default function Home() {
                 </Navbar>
     {/* fim do header */}
 
-            <div className="home-img"></div>
-            <ContainerEstilos />
-            <ContainerDoMes />
+            <ContainerRegistrar />
             <Footer />
         </div>
-
     )
 }
