@@ -18,7 +18,7 @@ export default function Routes(){
                 <Route path="/" exact component={Inicio}/> 
                 <Route path="/home" exact component={Home}/> 
                 <Route path="/cerveja" exact component={Cerveja}/>
-                <Route path="/info/id"  component={InfoCerveja}/> 
+                <Route path="/info"  component={InfoCerveja}/> 
                 <Route path="/registrar" exact component={Registrar}/> 
 
  

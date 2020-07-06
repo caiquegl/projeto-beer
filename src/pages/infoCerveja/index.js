@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import Zoom from 'react-img-zoom';
 import { MDBContainer, MDBRating, MDBInput  } from 'mdbreact';
 
@@ -7,7 +7,10 @@ import { MDBContainer, MDBRating, MDBInput  } from 'mdbreact';
 import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Avatar from '../../assets/avatar-login.png';
+import Logo from '../../assets/logo.png';
+import {Navbar , Nav, Form, Button, FormControl} from 'react-bootstrap';
 // fim do header
+
 import Footer from '../../components/footer/index';
 import './style.css';
 
@@ -28,6 +31,7 @@ import CarneVermelha from '../../assets/carne-vermelha.jpg';
 import CarneAves from '../../assets/carne-aves.jpg';
 
 
+import api from '../../api/api';
 
 
 
@@ -37,6 +41,9 @@ import CarneAves from '../../assets/carne-aves.jpg';
 
 
 export default function InfoCerveja(){
+
+    const [infoCerveja, setInfoCerveja] = useState([]);
+
     const [basic] = useState([
         {
           tooltip: 'Muito ruim'
@@ -56,33 +63,48 @@ export default function InfoCerveja(){
         }
       ]);
 
+
+
     let capturarNome = sessionStorage.getItem("nomeVisitante");
-    console.log(capturarNome);
     if(capturarNome == null){
         capturarNome = "Visitante";
     }
 
+    const idCerveja = sessionStorage.getItem("idCerveja");
+
+    const data = {
+        id: idCerveja,
+    }
+
+    useEffect(()=>{
+        api.post('listCervejaId',data).then(response => {
+            setInfoCerveja(response.data);
+        })
+      }, [])
+
+      
+
+
 
     return(
         <div>
-            <div className="container-fluid nav">
-                <div className="container">
-                    <div className="row">
-                        <div className="nav-itens">
-                            <Link to="/home">
-                                <p >Home</p>
-                            </Link>
-                            <Link to="/cerveja">
-                                <p className="teste active">Cerveja</p>
-                            </Link>
-                        </div>
-                        <div>
-                            <form className="form-inline my-2 my-lg-0">
-                                <input type="search" className="form-control mr-sm-2" placeholder="Search"/>
-                                <button class="btn btn-style my-2 my-sm-0" type="submit">Search</button>
-                                </form>
-                        </div>
-                        <div className="nav-login">
+            
+            {/* header */}
+
+
+            <Navbar  expand="lg" className="nav">
+                <Navbar.Brand href="/home"><img src={Logo} id="invertImg"/></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                    <Nav.Link href="/home" className="nav-itens"><p className="teste">Home</p></Nav.Link>
+                    <Nav.Link href="/cerveja"><p>Cerveja</p></Nav.Link>
+                    </Nav>
+                    <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-success" className="btn btn-style">Search</Button>
+                    </Form>
+                    <div className="nav-login">
                             <img src={Avatar} alt="Visitante"/>
                             <h5>Olá  {capturarNome}</h5>
                             <Link to="/registrar">
@@ -90,16 +112,23 @@ export default function InfoCerveja(){
                             </Link>
 
                         </div>
-                    </div>
-                </div>
-            </div>
-    {/* fim do header */}
+                </Navbar.Collapse>
+                </Navbar>
+            {/* fim do header */}
+
+            {infoCerveja.map(info => (
+
+
+
         <div className="container-info">
+
             <div className="pai-info">
+
+            
 
                 <div className="foto">
                     <Zoom
-                    img={Cooper}
+                    img={info.foto}
                     zoomScale={3}
                     width={500}
                     height={500}
@@ -112,27 +141,28 @@ export default function InfoCerveja(){
 
                 <div className="info-descri">
                     <div className="descri">
-                        <h2> Coopers Original Pale Ale 375ml</h2>
+                        <h2> {info.nome}</h2>
                         <p>
-                            A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais, com o equilíbrio perfeito entre o frutado e o amargor. ideal para quem está começando no estilo. 
+                            {info.pequenaDescri}
+                            <a href="#mais-info-beer"> Mais informações.</a>
                         </p>
                     </div>
                     <div className="dados">
-                            <img src={Aus} />
+                            <img src={info.localidadeIMG} />
                             <p>
-                                Australia
+                                {info.localidade}
                             </p>
                             <img src={CopoPale}/>
                             <p>
-                                English Pale Ale
+                                {info.estilo}
                             </p>
                             <img src={Ml}/>
                             <p>
-                                375ml
+                                {info.ml}
                             </p>
                             <img src={Valor}/>
                             <p>
-                                +/- R$ 20,00
+                                +/- R$ {info.precoMedio},00
                             </p>
                             
                     </div>
@@ -148,81 +178,77 @@ export default function InfoCerveja(){
                 </div>                        
             </div>
 
+
             <div className="mais-descri">
-                <h2>Saiba mais sobre este produto</h2>
-                <p>A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais, com o equilíbrio perfeito entre o frutado e o amargor ideal para quem está começando no estilo. </p>
+                <h2 id="mais-info-beer">Saiba mais sobre este produto</h2>
+                <p>
+                    {info.descricao}
+                </p>
 
                 <h3>cerveja coopers original pale ale</h3>
                 <div className="all-descri">
                     <div className="left">
                         <section>
-                            <img src={Aus}/>
+                            <img src={info.localidadeIMG}/>
                             <h2>Origem:</h2>
-                            <p>Adelaide - Australia</p>
+                            <p>{info.localidade}</p>
                         </section>
                         <section>
                             <img src={Cervejaria}/>
                             <h2>Cervejaria:</h2>
-                            <p>Coopers</p>
+                            <p>{info.cervejaria}</p>
                         </section>
                         <section>
                             <img src={CopoPale} className="img-copo"/>
                             <h2>Estilo:</h2>
-                            <p>English Pale Ale</p>
+                            <p>{info.estilo}</p>
                         </section>
                         <section>
                             <img src={Ml} className="img-copo"/>
                             <h2>Volume:</h2>
-                            <p>375ml</p>
+                            <p>{info.ml}</p>
                         </section>
                         <section>
-                            <img src={Cor2} className="cor-dourada"/>
+                            <img src={info.coloracaoIMG} className="cor-dourada"/>
                             <h2>Coloração:</h2>
-                            <p>Dourada</p>
+                            <p>{info.coloracao}</p>
                         </section>
                         <section>
                             <img src={Temperatura} className="temp"/>
                             <h2>Temperatura ideal:</h2>
-                            <p>12º a 14º</p>
+                            <p>{info.tempIdeal}</p>
                         </section>
                     </div>
                     <div className="right">
                         <section>
-                            <img src={An3} className="amargor"/>
+                            <img src={info.amargorIMG} className="amargor"/>
                             <h2>Amargor:</h2>
-                            <p>Moderado</p>
+                            <p>{info.amargor}</p>
                         </section>
                         <section>
                             <img src={Aparencia} />
                             <h2>Aparência:</h2>
-                            <p>Levemente turva</p>
+                            <p>{info.aparencia}</p>
                         </section>
                         <section>
                             <img src={Aroma} />
                             <h2>Aroma:</h2>
-                            <p>Pão, mel e notas cítricas do lúpulo.</p>
+                            <p>{info.aroma}</p>
                         </section>
                         <section>
                             <img src={Percent} />
                             <h2>Teor alcoólico:</h2>
-                            <p>4,5%</p>
+                            <p>{info.teor}</p>
                         </section>
                         <div className="harmonizacao">
                             <h2>Sugestão de harmonização:</h2>
-                            <div className="itens">
-                                <div>
-                                    <img src={CarneVermelha}/>
-                                    <p>Carne vermelha</p>
-                                </div>
-                                <div>
-                                    <img src={CarneAves}/>
-                                    <p>Aves</p>
-                                </div>
-                            </div>
+                            <p>{info.harmonizacao}</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+
 
 
             <div className="avaliacao" id="comentarios">
@@ -288,7 +314,8 @@ export default function InfoCerveja(){
 
                 </div>
             </div>
-        </div>
+        </div> 
+        ))}
         <Footer />
     </div>
     )

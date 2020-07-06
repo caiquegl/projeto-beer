@@ -33,6 +33,8 @@ export default class SimpleSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
+
+
     return (
         <div className="full-slick">
             <div className="full-slick">

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect, } from 'react';
+import {useHistory} from 'react-router-dom';
 import { MDBContainer, MDBRating, MDBInput  } from 'mdbreact';
 import './style.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
@@ -8,10 +8,13 @@ import 'mdbreact/dist/css/mdb.css';
 
 import Coopers from '../../assets/coopers.png';
 
-
+import api from '../../api/api';
 
 
 export default function Categoria(){
+
+    const history = useHistory();
+    const [listCervejas, setListCervejas] = useState([]);
 
     const [basic] = useState([
         {
@@ -30,6 +33,21 @@ export default function Categoria(){
           tooltip: 'Excelente'
         }
       ]);
+
+
+      useEffect(()=>{
+        api.get('listarCerveja').then(response => {
+            setListCervejas(response.data);
+        })
+      }, [])
+
+      function maisInfo(id){
+
+        sessionStorage.setItem("idCerveja", id);
+
+        return history.push("/info");
+
+      }
 
     return(
         <div className="div-la">
@@ -140,22 +158,32 @@ export default function Categoria(){
 
                     <div className="pai-cards">
 
-                        <div className="card">
-                            <img src={Coopers} className="card-img-top"/>
+                        {listCervejas.map(listCervejas => (
+                            
+                            <div className="card" key={listCervejas.idCerveja}>
+                            <img src={listCervejas.foto} className="card-img-top"/>
                             <div className="card-body">
-                                <div>
+                                <div className="card-body-avali">
                                     <MDBContainer>
                                         <MDBRating data={basic}/>
                                     </MDBContainer>
+                                    <h6>
+                                        {listCervejas.nome}
+                                    </h6>
                                     <p className="card-text">
-                                        A Coopers Original Pale Ale é uma cerveja de notas frutadas e florais. 
+
+                                        {listCervejas.pequenaDescri} 
                                     </p>
                                 </div>
-                                <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
+                                <div className="card-button"> 
+                                    <button className="mais-info" onClick={() => maisInfo(listCervejas.idCerveja)}>Mais informações</button>
+                                </div>
                             </div>
                         </div>
+
+                        ))}
                         
-                        <div className="card">
+                        {/* <div className="card">
                             <img src={Coopers} className="card-img-top"/>
                             <div className="card-body">
                                 <div>
@@ -275,7 +303,7 @@ export default function Categoria(){
                                 </div>
                                 <Link to="/info/id"><button className="mais-info">Mais informações</button></Link>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>

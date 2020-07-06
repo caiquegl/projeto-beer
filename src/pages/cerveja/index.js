@@ -8,6 +8,7 @@ import Logo from '../../assets/logo.png';
 import {Navbar , Nav, Form, Button, FormControl} from 'react-bootstrap';
 // fim do header
 
+
 import Footer from '../../components/footer/index';
 import CervejasConhecidas from '../../components/Container/cervejasConhecidas/index';
 import Categoria from '../../components/categorias/index';
@@ -26,7 +27,7 @@ export default function Cervejas(){
 
 
                 <Navbar  expand="lg" className="nav">
-                <Navbar.Brand href="#home"><img src={Logo} id="invertImg"/></Navbar.Brand>
+                <Navbar.Brand href="/home"><img src={Logo} id="invertImg"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -48,6 +49,7 @@ export default function Cervejas(){
                 </Navbar.Collapse>
                 </Navbar>
     {/* fim do header */}
+
 
             <CervejasConhecidas />
             <Categoria />

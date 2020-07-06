@@ -3,15 +3,139 @@ import {useHistory} from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css';
+import api from '../../api/api';
 
 
 export default function Efeitos(){
+
+    const [nomeVisita, setNomeVisita] = useState("");
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const [senhaLogando, setSenhaLogando] = useState("");
+    const [emailLogando, setEmailLogando] = useState("");
+
+
+
+    async function historyHome(){
+
+        const login = {
+            email,
+            senha,
+        }
+
+        const logando = await api.post('logando', login);
+
+
+        sessionStorage.setItem("nomeVisitante",logando.data.nome);
+        sessionStorage.setItem("idVisitante",logando.data.id);
+
+        return history.push("/home");
+        
+    }
+
+    async function logando(e){
+        e.preventDefault();
+        sessionStorage.clear()
+
+        const data = {
+            email: emailLogando,
+            senha: senhaLogando,
+        };
+
+        console.log(logando);
+        
+        try{
+
+            const response = await api.post('logando', data);
+            let validando = response.data.nome;
+            
+            if(typeof validando === 'undefined'){
+                   toast.error("Usuario ou senha invalidos", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
+            }else{
+                sessionStorage.setItem("nomeVisitante",response.data.nome);
+                sessionStorage.setItem("idVisitante",response.data.id);
+
+                history.push('/home');
+            }
+
+            
+
+        } catch(error){
+
+            toast.error("Usuario ou senha invalidos", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+        }
+
+    }
+
+    async function register(e){
+        e.preventDefault();
+        sessionStorage.clear()
+
+
+        const registrando = {
+            nome,
+            email,
+            senha
+        };
+        
+        try{
+
+            const response = await api.post('cadastro', registrando);
+            toast.success('Cadastrado com sucesso!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+
+                
+
+                
+
+
+                setTimeout(historyHome, 5000);
+
+        } catch(error){
+            toast.error('Erro no cadastro, tente novamente', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+        }
+
+       
+    }
+
     const history = useHistory();
 
     
 
-    const [nomeVisita, setNomeVisita] = useState("");
     // const [segundo, setSegundo] = useState(initialOcult);
     // const [nome, setNome] = useState(nom);
     // const [initial, setInitial] =useState("initial");
@@ -23,6 +147,8 @@ export default function Efeitos(){
         sessionStorage.clear()
         if (nomeVisita.length > 0) {
             sessionStorage.setItem("nomeVisitante",nomeVisita);
+            sessionStorage.setItem("idVisitante",0);
+
             return history.push("/home");
 
         }else{
@@ -93,6 +219,8 @@ export default function Efeitos(){
     
     function time(){
         setTimeout(aparecendoPrimeiro, 500);
+        sessionStorage.clear()
+
     }
 
 
@@ -144,34 +272,69 @@ export default function Efeitos(){
                     </div>
                 </div>
                     <div id="cadastro-visi">
-                        <form>
+                        <form onSubmit={register}>
                             <div className="form-group">
                                 <label for="nome">Digite seu nome:</label>
-                                <input type="text" placeholder="Digite seu nome" className="form-control" required/>
+                                <input 
+                                type="text" 
+                                placeholder="Digite seu nome" 
+                                className="form-control" 
+                                required
+                                value={nome}
+                                onChange={e => setNome(e.target.value)}
+                                />
                             </div>
                             <div className="form-group">
                                 <label for="email">Digite seu email:</label>
-                                <input type="email" placeholder="Digite seu email" className="form-control" required/>
+                                <input 
+                                type="email" 
+                                placeholder="Digite seu email" 
+                                className="form-control" 
+                                required
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                />
                             </div>
                             <div className="form-group">
                                 <label for="senha">Digite sua senha:</label>
-                                <input type="password" placeholder="Digite seu senha" className="form-control" required/>
+                                <input 
+                                type="password" 
+                                placeholder="Digite seu senha" 
+                                className="form-control" 
+                                required
+                                value={senha}
+                                onChange={e => setSenha(e.target.value)}
+                                />
                             </div>
                             <button className="btn btn-cadastrar">Cadastrar</button>
                         </form>
                     </div>
                     <div id="login-visi">
-                    <form>
+                    <form onSubmit={logando}>
                             <div className="form-group">
                                 <label for="nome">Digite email:</label>
-                                <input type="email" placeholder="Digite seu email" className="form-control" required/>
+                                <input 
+                                type="email" 
+                                placeholder="Digite seu email" 
+                                className="form-control" 
+                                required
+                                value={emailLogando}
+                                onChange={e => setEmailLogando(e.target.value)}
+                                />
                             </div>
                             
                             <div className="form-group">
                                 <label for="senha">Digite sua senha:</label>
-                                <input type="password" placeholder="Digite seu senha" className="form-control" required/>
+                                <input 
+                                type="password" 
+                                placeholder="Digite seu senha" 
+                                className="form-control" 
+                                required
+                                value={senhaLogando}
+                                onChange={e => setSenhaLogando(e.target.value)}
+                                />
                             </div>
-                            <button className="btn btn-cadastrar">Cadastrar</button>
+                            <button className="btn btn-cadastrar">Entrar</button>
                         </form>
                     </div>
 

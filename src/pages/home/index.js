@@ -14,22 +14,71 @@ import Footer from '../../components/footer/index';
 
 
 import './style.css';
+import { render } from '@testing-library/react';
 
 
 export default function Home() {
-    let capturarNome = sessionStorage.getItem("nomeVisitante");
-    console.log(capturarNome);
+    const capturarNome = sessionStorage.getItem("nomeVisitante");
+    const idVisitante = sessionStorage.getItem("idVisitante");
+
+    const [ logando, setLogando] = useState("");
+
+    
+
+
     if(capturarNome == null){
         capturarNome = "Visitante";
     }
+
+    async function nav(){
+        if(idVisitante >= 1){
+         document.getElementById("logando-ocult").style = "display: none";
+        }
+    }
+
+    window.onload = nav;
+
 
     return(
         <div>
              {/* header */}
 
+             <Navbar  expand="lg" className="nav" id="logando">
+        <Navbar.Brand href="/home"><img src={Logo} id="invertImg"/></Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+            <Nav.Link href="/home" className="nav-itens"><p className="teste">Home</p></Nav.Link>
+            <Nav.Link href="/cerveja"><p>Cerveja</p></Nav.Link>
+            </Nav>
+            <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-success" className="btn btn-style">Search</Button>
+            </Form>
+            <div className="nav-login">
+                    <img src={Avatar} alt="Visitante"/>
+                    <h5>Olá  {capturarNome}</h5>
+                    <Link to="/registrar" id="logando-ocult">
+                        <h5 id="ocut-visit">Registrar</h5>
+                    </Link>
 
-             <Navbar  expand="lg" className="nav">
-                <Navbar.Brand href="#home"><img src={Logo} id="invertImg"/></Navbar.Brand>
+                </div>
+        </Navbar.Collapse>
+        </Navbar>
+            
+    {/* fim do header */}
+
+            <div className="home-img"></div>
+            <ContainerEstilos />
+            <ContainerDoMes />
+            <Footer />
+        </div>
+
+    )
+}
+
+
+{/* <Navbar.Brand href="/home"><img src={Logo} id="invertImg"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -44,19 +93,8 @@ export default function Home() {
                             <img src={Avatar} alt="Visitante"/>
                             <h5>Olá  {capturarNome}</h5>
                             <Link to="/registrar">
-                                <h5>Registrar</h5>
+                                <h5 id="ocut-visit">Registrar</h5>
                             </Link>
 
                         </div>
-                </Navbar.Collapse>
-                </Navbar>
-    {/* fim do header */}
-
-            <div className="home-img"></div>
-            <ContainerEstilos />
-            <ContainerDoMes />
-            <Footer />
-        </div>
-
-    )
-}
+                </Navbar.Collapse> */}
