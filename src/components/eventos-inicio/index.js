@@ -246,7 +246,7 @@ export default function Efeitos(){
                     <h2>Gostaria de entrar como:</h2>
                 </div>
                 <div className="flex-entrar">
-                    <button className="btn btn-entrar"  >Visitante</button>
+                    <button className="btn btn-entrar"  onClick={visitante}>Visitante</button>
                     <p>ou caso já tenha cadastro</p>
                     <button className="btn btn-entrar"  onClick={login}>Login</button>
                 </div>
