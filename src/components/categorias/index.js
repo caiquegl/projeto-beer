@@ -5,6 +5,8 @@ import './style.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbreact/dist/css/mdb.css';
+import BeautyStars from 'beauty-stars';
+
 
 import Coopers from '../../assets/coopers.png';
 
@@ -13,26 +15,12 @@ import api from '../../api/api';
 
 export default function Categoria(){
 
+
+
     const history = useHistory();
     const [listCervejas, setListCervejas] = useState([]);
+    const [state, setState] = useState("");
 
-    const [basic] = useState([
-        {
-          tooltip: 'Muito ruim'
-        },
-        {
-          tooltip: 'Ruim'
-        },
-        {
-          tooltip: 'Ok',
-        },
-        {
-          tooltip: 'Boa'
-        },
-        {
-          tooltip: 'Excelente'
-        }
-      ]);
 
 
       useEffect(()=>{
@@ -42,12 +30,12 @@ export default function Categoria(){
       }, [])
 
       function maisInfo(id){
-
         sessionStorage.setItem("idCerveja", id);
-
         return history.push("/info");
-
       }
+
+     
+
 
     return(
         <div className="div-la">
@@ -164,9 +152,14 @@ export default function Categoria(){
                             <img src={listCervejas.foto} className="card-img-top"/>
                             <div className="card-body">
                                 <div className="card-body-avali">
-                                    <MDBContainer>
-                                        <MDBRating data={basic}/>
-                                    </MDBContainer>
+                                <BeautyStars
+                                    value={(listCervejas.nota)}
+                                    size="20px"
+                                    editable="false"
+                                    activeColor={"#f3cb06"}
+                                    inactiveColor={"#808080"}
+                                    onChange={value => setState({ value })}
+                                    />
                                     <h6>
                                         {listCervejas.nome}
                                     </h6>

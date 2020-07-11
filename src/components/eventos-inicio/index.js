@@ -30,7 +30,7 @@ export default function Efeitos(){
 
 
         sessionStorage.setItem("nomeVisitante",logando.data.nome);
-        sessionStorage.setItem("idVisitante",logando.data.id);
+        sessionStorage.setItem("idVisitante",logando.data.idUsuario);
 
         return history.push("/home");
         
@@ -64,7 +64,7 @@ export default function Efeitos(){
                     });
             }else{
                 sessionStorage.setItem("nomeVisitante",response.data.nome);
-                sessionStorage.setItem("idVisitante",response.data.id);
+                sessionStorage.setItem("idVisitante",response.data.idUsuario);
 
                 history.push('/home');
             }
@@ -246,7 +246,7 @@ export default function Efeitos(){
                     <h2>Gostaria de entrar como:</h2>
                 </div>
                 <div className="flex-entrar">
-                    <button className="btn btn-entrar"  onClick={visitante}>Visitante</button>
+                    <button className="btn btn-entrar"  >Visitante</button>
                     <p>ou caso já tenha cadastro</p>
                     <button className="btn btn-entrar"  onClick={login}>Login</button>
                 </div>

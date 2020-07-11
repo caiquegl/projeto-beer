@@ -22,7 +22,7 @@ export default function Container(){
             <p>
                 Mussum Ipsum, cacilds vidis litro abertis. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Per aumento de cachacis, eu reclamis. Paisis, filhis, espiritis santis. Cevadis im ampola pa arma uma pindureta.
             </p>
-            <img src={Beers} alt=""/>
+            <img src={Beers} alt="" />
             </div>
             
         

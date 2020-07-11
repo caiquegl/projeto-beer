@@ -192,12 +192,21 @@ text-align: justify;
     text-align: center;
     margin-top: 50px;
 }
+.star .nota{
+    display: flex;
+}
+.coments .star{
+    display: flex;
+    margin-bottom: 20px;
+}
 .avaliacao h2{
     text-transform: uppercase;
     color: #9da6af;
     font-weight: bold;
     letter-spacing: 1px;
-    margin-bottom: 40px;
+    padding-bottom: auto;
+    padding-top: auto;
+    margin-right: 20px;
 }
 .avaliacao .pai-avaliacao{
     padding: 20px;

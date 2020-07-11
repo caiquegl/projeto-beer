@@ -14,7 +14,7 @@ import Footer from '../../components/footer/index';
 
 
 import './style.css';
-import { render } from '@testing-library/react';
+
 
 
 export default function Home() {

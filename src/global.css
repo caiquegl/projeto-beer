@@ -112,6 +112,9 @@ nav{
     height: 70px;
     text-transform: uppercase;
 }
+.divisao-coments{
+    display: block;
+}
 @media (max-width: 700px){
     .teste{
         background-color: transparent;
