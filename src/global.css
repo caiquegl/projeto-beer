@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+#logando-ocult1{
+    display: none;
+}
 #invertImg{
     width: 100px;
     margin-left: 40px;

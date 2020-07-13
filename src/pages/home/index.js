@@ -11,6 +11,8 @@ import {Navbar , Nav, Form, Button, FormControl} from 'react-bootstrap';
 import ContainerDoMes from '../../components/Container/container-home-doMes/index';
 import ContainerEstilos from '../../components/Container/container-estilos/index';
 import Footer from '../../components/footer/index';
+import Buscar from '../../components/buscar/index';
+
 
 
 import './style.css';
@@ -18,10 +20,11 @@ import './style.css';
 
 
 export default function Home() {
-    const capturarNome = sessionStorage.getItem("nomeVisitante");
+    let capturarNome = sessionStorage.getItem("nomeVisitante");
     const idVisitante = sessionStorage.getItem("idVisitante");
 
     const [ logando, setLogando] = useState("");
+
 
     
 
@@ -30,13 +33,20 @@ export default function Home() {
         capturarNome = "Visitante";
     }
 
-    async function nav(){
-        if(idVisitante >= 1){
-         document.getElementById("logando-ocult").style = "display: none";
+    async function nav1(){
+        if(idVisitante < 1){
+         document.getElementById("logando-ocult1").style = "display: block";
         }
     }
 
-    window.onload = nav;
+
+    if(idVisitante < 1 ){
+
+        window.onload = nav1;
+
+
+    }
+
 
 
     return(
@@ -52,13 +62,12 @@ export default function Home() {
             <Nav.Link href="/cerveja"><p>Cerveja</p></Nav.Link>
             </Nav>
             <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success" className="btn btn-style">Search</Button>
+            <Buscar />
             </Form>
             <div className="nav-login">
                     <img src={Avatar} alt="Visitante"/>
                     <h5>Olá  {capturarNome}</h5>
-                    <Link to="/registrar" id="logando-ocult">
+                    <Link to="/registrar" id="logando-ocult1">
                         <h5 id="ocut-visit">Registrar</h5>
                     </Link>
 

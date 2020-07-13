@@ -44,45 +44,62 @@ export default function CriarComentario(){
       async function postComentar(e){
         e.preventDefault();
 
+        if(idVisitante >= 1){
 
+          console.log(idVisitante);
           const data = {
-              comentario: comentar,
-              nomeUsuario: capturarNome,
-              idCerveja: idCerveja,
-              idUsuario: idVisitante
+            comentario: comentar,
+            nomeUsuario: capturarNome,
+            idCerveja: idCerveja,
+            idUsuario: idVisitante
+        }
+
+      try{
+          let response = await api.post('comentando', data);
+          let validacao = response.data.msg;
+          if(typeof validacao === "undefined"){
+
+              toast.success('Comentado com sucesso!', {
+                  position: "bottom-right",
+                  autoClose: 3500,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  });
+
+
+          }else{
+              toast.error("Só pode fazer um comentario por cerveja", {
+                  position: "top-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  });
           }
 
-        try{
-            let response = await api.post('comentando', data);
-            let validacao = response.data.msg;
-            if(typeof validacao === "undefined"){
+    } catch(err){
+      console.log(err)
+      alert("error")
+    }
 
-                toast.success('Comentado com sucesso!', {
-                    position: "bottom-right",
-                    autoClose: 3500,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    });
+        }else{
 
+          toast.error("Para avaliar tem que se cadastrar", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
 
-            }else{
-                toast.error("Só pode fazer um comentario por cerveja", {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    });
-            }
-
-      } catch(err){
-        console.log(err)
-        alert("error")
+          
       }
     }
 

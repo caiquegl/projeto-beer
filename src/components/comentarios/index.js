@@ -85,6 +85,21 @@ export default function InfoCerveja() {
   async function postComentar(e) {
     e.preventDefault();
 
+
+    if(idVisitante < 1){
+
+      toast.error("Para avaliar tem que se cadastrar", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
+    }else{
+
     const data = {
       comentario: comentar,
       nomeUsuario: capturarNome,
@@ -147,6 +162,7 @@ export default function InfoCerveja() {
         progress: undefined,
       });
     }
+  }
   }
 
   return (
