@@ -6,6 +6,7 @@ import Cerveja from './pages/cerveja/index';
 import Inicio from './pages/inicio/index';
 import InfoCerveja from './pages/infoCerveja/index';
 import Registrar from './pages/registrar/index';
+import Busca from './pages/busca/index';
 
 
 
@@ -18,8 +19,10 @@ export default function Routes(){
                 <Route path="/" exact component={Inicio}/> 
                 <Route path="/home" exact component={Home}/> 
                 <Route path="/cerveja" exact component={Cerveja}/>
-                <Route path="/info"  component={InfoCerveja}/> 
-                <Route path="/registrar" exact component={Registrar}/> 
+                <Route path="/info"  exact component={InfoCerveja}/> 
+                <Route path="/registrar" exact component={Registrar}/>
+                <Route path="/busca" exact component={Busca}/> 
+ 
 
  
 

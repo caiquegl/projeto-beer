@@ -34,6 +34,11 @@ export default function Categoria(){
         return history.push("/info");
       }
 
+      async function pag(id){
+        await api.get(`listarCerveja?page=${id}`).then(response => {
+            setListCervejas(response.data);
+        })
+      }
      
 
 
@@ -126,9 +131,9 @@ export default function Categoria(){
 
                     <div class="btn-toolbar class" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group mr-2" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-secondary">1</button>
-                            <button type="button" class="btn btn-secondary">2</button>
-                            <button type="button" class="btn btn-secondary">3</button>
+                            <button type="button" class="btn btn-secondary" onClick={() => pag(1)}>1</button>
+                            <button type="button" class="btn btn-secondary" onClick={() => pag(2)}>2</button>
+                            <button type="button" class="btn btn-secondary" onClick={() => pag(3)}>3</button>
                             <button type="button" class="btn btn-secondary">4</button>
                         </div>
                     </div>
