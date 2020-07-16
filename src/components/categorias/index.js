@@ -20,6 +20,14 @@ export default function Categoria(){
     const history = useHistory();
     const [listCervejas, setListCervejas] = useState([]);
     const [state, setState] = useState("");
+    const [selectValue, setSelectValue] = useState(1);
+    const list = [
+        {id:1, link: "listarCerveja", name: 'Novidades'},
+        {id:2, link: "aZ", name: 'Nome A- Z'},
+        {id:3, link: "zA", name: 'Nome Z - A'},
+        {id:4, link: "maisAvaliada", name: 'Mais avaliados'},
+        {id:5, link: "menosAvaliada", name: 'Menos avaliados'},
+      ];  
 
 
 
@@ -35,12 +43,93 @@ export default function Categoria(){
       }
 
       async function pag(id){
-        await api.get(`listarCerveja?page=${id}`).then(response => {
+        await api.get(`${selectValue}?page=${id}`).then(response => {
             setListCervejas(response.data);
         })
       }
-     
 
+      async function ordernarBy(){
+        await api.get(`${selectValue}`).then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+
+
+      async function cooper(){
+        await api.get("cooper").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function dadoBier(){
+        await api.get("dadoBier").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function asgard(){
+        await api.get("asgard").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function importada(){
+        await api.get("importada").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function paulaner(){
+        await api.get("paulaner").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function blueMoon(){
+        await api.get("blueMoon").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function paleAle(){
+        await api.get("paleAle").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function ipa(){
+        await api.get("ipa").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function redAle(){
+        await api.get("redAle").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function especial(){
+        await api.get("especial").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function weiss(){
+        await api.get("weiss").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+      async function witbier(){
+        await api.get("witbier").then(response => {
+            setListCervejas(response.data);
+        })
+      }
+
+
+ 
 
     return(
         <div className="div-la">
@@ -50,73 +139,59 @@ export default function Categoria(){
                     
                     <ul>
                         <li>
+                    
+                            <label onClick={() => paleAle()}>Pale Ale</label>
+                        </li>
+                        <li>
+                        
+                            <label onClick={() => ipa()}>India Pale Ale (IPA)</label>
+                        </li>
+                        <li>
+                        
+                            <label onClick={() => redAle()}>Red Ale</label>
+                        </li>
+                        <li>
                             
-                            <label htmlFor="cerveja-de-trigo">Cerveja de trigo</label>
+                            <label onClick={() => weiss()}>Weiss</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="ipa" id="ipa"/> 
-                            <label htmlFor="ipa">India Pale Ale IPA</label>
+                           
+                            <label onClick={() => weiss()}>Weiss</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="lager" id="lager"/> 
-                            <label htmlFor="lager">Lager</label>
+                           
+                            <label onClick={() => witbier()}>Witbier</label>
                         </li>
-                        <li>
-                            <input type="checkbox" name="pale-ale" id="pale-ale"/> 
-                            <label htmlFor="pale-ale">Pale Ale</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="strong-ale" id="strong-ale"/> 
-                            <label htmlFor="strong-ale">Strong Ale</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="sour" id="sour"/> 
-                            <label htmlFor="sour">Sour</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="porter" id="porter"/> 
-                            <label htmlFor="porter">Porter</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="blue-moon" id="blue-moon"/> 
-                            <label htmlFor="blue-moon">Blue Moon</label>
-                        </li>
+                       
                     </ul>
 
-                    <h2>Marcas</h2>
+                    <h2>Cervejaria</h2>
                     <ul>
                         <li>
-                            <input type="checkbox" name="asgard" id="asgard"/> 
-                            <label htmlFor="asgard">Asgard</label>
+                          
+                            <label onClick={() => cooper()}>Coopers</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="blue-moon" id="blue-moon"/> 
-                            <label htmlFor="blue-moon">Blue Moon</label>
+                          
+                            <label onClick={() => dadoBier()}>Dado Bier</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="budweiser" id="budweiser"/> 
-                            <label htmlFor="budweiser">Budweiser</label>
+                        
+                            <label onClick={() => asgard()}>Asgard</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="cacildis" id="cacildis"/> 
-                            <label htmlFor="cacildis">Cacildis</label>
+                            
+                            <label onClick={() => importada()}>Importada</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="faxe" id="faxe"/> 
-                            <label htmlFor="faxe">Faxe</label>
+                            
+                            <label onClick={() => paulaner()}>Paulaner</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="coopers" id="coopers"/> 
-                            <label htmlFor="coopers">Coopers</label>
+                           
+                            <label onClick={() => blueMoon()}>BlueMoon</label>
                         </li>
-                        <li>
-                            <input type="checkbox" name="skol" id="skol"/> 
-                            <label htmlFor="skol">Skol</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="brahma" id="brahma"/> 
-                            <label htmlFor="brahma">Brahma</label>
-                        </li>
+                    </ul>
                         <h2>Curiosidade</h2>
                         <ul>
                             <li>
@@ -124,7 +199,6 @@ export default function Categoria(){
                                 </p>
                             </li>
                         </ul>
-                    </ul>
                 </div>
                 <div className="avo-cards">
                     <div className="ordernar">
@@ -139,13 +213,10 @@ export default function Categoria(){
                     </div>
                     
                         <p>Ordernar por:</p>
-                        <select name="ordernar" id="ordernar">
-                            <option selected>Selecione</option>
-                            <option>Novidades</option>
-                            <option>Nome A-Z</option>
-                            <option>Nome Z-A</option>
-                            <option>Maiores notas</option>
-                            <option>Menores notas</option>
+                        <select name="ordernar" id="ordernar" value={selectValue} onChange={e => setSelectValue(e.target.value)}>
+                            {list.map((item) => (
+                                <option value={item.link} onClick={() => ordernarBy()}>{item.name}</option>
+                            ))}  
                         </select>
                     </div>
 

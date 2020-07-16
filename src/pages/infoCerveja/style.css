@@ -314,6 +314,123 @@ text-align: justify;
     background-color: #ffc700;
 }
 
+@media (max-width: 700px){
+    .container-info{
+        width: 100%;
+        box-shadow: none;
+    }
+    .container-info .pai-info{
+        display: block;
+    }
+    .container-info .pai-info .foto{
+        width: 100%;
+        border-right: none;
+    }
+    .container-info .pai-info .foto div{
+        width: 100% !important;
+    }
+    .container-info .pai-info .info-descri{
+        margin-top: 30px;
+        padding: 0;
+    }
+    .container-info .pai-info .info-descri .dados{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    .coments{
+        width: 300px;
+    }
+    .coments a{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .star{
+        width: 165px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+    .star ul{
+        width: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .mais-descri{
+        width: 100%;
+        padding: 0;
+        margin-top: 30px;
+        text-align: justify;
+        padding-bottom: 40px;
+    }
+    .mais-descri .all-descri{
+        display: block;
+    }
+    .mais-descri .all-descri .left section{
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    }
+    .mais-descri .all-descri .right section{
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: 0;
+    }
+    .mais-descri .all-descri .right section .amargor{
+        width: 100px;
+    }
+    .avaliacao{
+        width: 100%;
+    }
+    .avaliacao .pai-avaliacao{
+        width: 100%;
+        padding: 0;
+    }
+    .avaliacao .pai-avaliacao .star{
+        display: block;
+        height: auto;
+    }
+    .nota{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        width: auto;
+    }
+    .nota ul{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 164px !important;
+    }
+    .user-comentarios{
+        display: block;
+    }
+    .divisao-coments{
+        border-right: none;
+        padding-right: 0;
+    }
+    .user-comentarios .divisao-coments .comentarios{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0 !important;
+    }
+    .user-comentarios .divisao-coments .comentarios h2{
+        margin-bottom: 20px;
+    }
+    .user-comentarios .divisao-coments .comentarios ul{
+        margin-bottom: 20px !important;
+    }
+    .fazer-coment{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+
+}
+
 
 
 

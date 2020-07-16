@@ -132,6 +132,13 @@
      background-color: #ffc700;
      font-weight: bold;
  }
+ ul li label{
+     cursor: pointer;
+     padding-left: 10px;
+ }
+ ul li label:hover{
+    color: #ffc700;
+}
 
 @media (max-width: 700px){
     .categorias{
@@ -139,6 +146,52 @@
     }
     .ordernar{
         display: block;
-        height: 90px;
+        height: auto;
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
     }
+    .ordernar .btn-toolbar{
+        margin-left: auto;
+        margin-right: auto;
+        width: 223px;
+        margin-bottom: 30px;
+    }
+    .pai-categorias{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .avo-cards{
+        width: 100%;
+    }
+    .pai-cards{
+        display: block;
+        margin-left: 0;
+        width: 100%;
+    }
+    .pai-cards .card{
+        box-shadow: none;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    .pai-cards .card .card-img-top{
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .pai-cards .card .card-body{
+        border-top: none;
+        justify-content: center;
+    }
+    .pai-cards .card .card-body .card-body-avali ul{
+        width: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 20px !important;
+    }
+
+
 }

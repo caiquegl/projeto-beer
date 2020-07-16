@@ -163,4 +163,47 @@
     #cadastro-ocult .btn-entrar{
         margin-right: 10px;
     }
+    .flex-entrar{
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .flex-entrar p{
+        text-align: center;
+    }
+    .cadastre{
+        text-align: center;
+    }
+    .cadastre .sem-estilo{
+        margin-top: 10;
+        margin-left: 0;
+    }
+    .primeira-fase{
+        text-align: center;
+    }
+    .primeira-fase .btn-entrar{
+        text-align: center;
+        margin-left: 0;
+    }
+    .form-ocult .form-flex{
+        display: block;
+        text-align: center;
+    }
+    .form-ocult .form-flex .btn-entrar{
+        margin-top: 20px;
+    }
+    #cadastro-visi form{
+        text-align: center;
+    }
+    #cadastro-visi form .btn-cadastrar{
+        text-align: center;
+        margin-left: 0;
+    }
+    #login-visi form{
+        text-align: center;
+    }
+    #login-visi form .btn-cadastrar{
+        text-align: center;
+        margin-left: 0;
+    }
 }
