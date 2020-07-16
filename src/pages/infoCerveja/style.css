@@ -318,6 +318,8 @@ text-align: justify;
     .container-info{
         width: 100%;
         box-shadow: none;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .container-info .pai-info{
         display: block;
@@ -369,13 +371,11 @@ text-align: justify;
     }
     .mais-descri .all-descri .left section{
     justify-content: space-between;
-    padding-left: 30px;
-    padding-right: 30px;
+    
     }
     .mais-descri .all-descri .right section{
     justify-content: space-between;
-    padding-left: 30px;
-    padding-right: 30px;
+ 
     margin-right: 0;
     }
     .mais-descri .all-descri .right section .amargor{
