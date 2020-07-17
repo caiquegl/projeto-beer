@@ -195,15 +195,23 @@
     #cadastro-visi form{
         text-align: center;
     }
+    #cadastro-visi form .form-group{
+        text-align: left;
+    }
     #cadastro-visi form .btn-cadastrar{
         text-align: center;
         margin-left: 0;
     }
     #login-visi form{
-        text-align: center;
+        width: 100%;
     }
+    #login-visi form .btn{
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 123px;
+    }
+
     #login-visi form .btn-cadastrar{
-        text-align: center;
-        margin-left: 0;
+        margin-left: 110px !important;
     }
 }

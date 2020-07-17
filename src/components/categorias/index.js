@@ -12,6 +12,9 @@ import Coopers from '../../assets/coopers.png';
 
 import api from '../../api/api';
 
+import Loading from '../../components/loading/index';
+
+
 
 export default function Categoria(){
 
@@ -21,6 +24,8 @@ export default function Categoria(){
     const [listCervejas, setListCervejas] = useState([]);
     const [state, setState] = useState("");
     const [selectValue, setSelectValue] = useState(1);
+    const [ loader, setLoader] = useState("");
+
     const list = [
         {id:1, link: "listarCerveja", name: 'Novidades'},
         {id:2, link: "aZ", name: 'Nome A- Z'},
@@ -32,9 +37,13 @@ export default function Categoria(){
 
 
       useEffect(()=>{
+        setLoader("trueLoader");
         api.get('listarCerveja').then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
         })
+    
+
       }, [])
 
       function maisInfo(id){
@@ -45,86 +54,142 @@ export default function Categoria(){
       async function pag(id){
         await api.get(`${selectValue}?page=${id}`).then(response => {
             setListCervejas(response.data);
+            console.log(response.data)
         })
+
+
+
       }
 
       async function ordernarBy(){
+        setLoader("trueLoader");
+
         await api.get(`${selectValue}`).then(response => {
             setListCervejas(response.data);
+            console.log(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
 
 
       async function cooper(){
+        setLoader("trueLoader");
+
         await api.get("cooper").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function dadoBier(){
+        setLoader("trueLoader");
+
         await api.get("dadoBier").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function asgard(){
+        setLoader("trueLoader");
+
         await api.get("asgard").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function importada(){
+        setLoader("trueLoader");
+
         await api.get("importada").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function paulaner(){
+        setLoader("trueLoader");
+
         await api.get("paulaner").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function blueMoon(){
+        setLoader("trueLoader");
+
         await api.get("blueMoon").then(response => {
             setListCervejas(response.data);
         })
+        setLoader("falseLoader");
       }
 
       async function paleAle(){
+        setLoader("trueLoader");
+
         await api.get("paleAle").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function ipa(){
+        setLoader("trueLoader");
+
         await api.get("ipa").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function redAle(){
+        setLoader("trueLoader");
+
         await api.get("redAle").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function especial(){
+        setLoader("trueLoader");
+
         await api.get("especial").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function weiss(){
+        setLoader("trueLoader");
+
         await api.get("weiss").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
       async function witbier(){
+        setLoader("trueLoader");
+
         await api.get("witbier").then(response => {
             setListCervejas(response.data);
+            setLoader("falseLoader");
+
         })
       }
 
@@ -156,7 +221,7 @@ export default function Categoria(){
                         </li>
                         <li>
                            
-                            <label onClick={() => weiss()}>Weiss</label>
+                            <label onClick={() => especial()}>Especial</label>
                         </li>
                         <li>
                            
@@ -250,7 +315,12 @@ export default function Categoria(){
                             </div>
                         </div>
 
+                        
+
                         ))}
+
+<Loading status={loader}/>
+
                         
                         {/* <div className="card">
                             <img src={Coopers} className="card-img-top"/>

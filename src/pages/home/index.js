@@ -15,15 +15,18 @@ import Buscar from '../../components/buscar/index';
 
 
 
+
 import './style.css';
 
 
 
-export default function Home() {
+export default function Home(props) {
     let capturarNome = sessionStorage.getItem("nomeVisitante");
     const idVisitante = sessionStorage.getItem("idVisitante");
 
     const [ logando, setLogando] = useState("");
+
+
 
 
     

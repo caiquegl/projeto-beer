@@ -22,6 +22,7 @@ export default function InfoCerveja(){
 
     const [infoCerveja, setInfoCerveja] = useState([])
 
+
     const [basic] = useState([
         {
           tooltip: 'Muito ruim'
@@ -51,8 +52,10 @@ export default function InfoCerveja(){
     }
 
     useEffect(()=>{
+
         api.post('listCervejaId',data).then(response => {
             setInfoCerveja(response.data);
+
         })
       }, [])
 

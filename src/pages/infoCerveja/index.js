@@ -33,6 +33,8 @@ import CarneVermelha from "../../assets/carne-vermelha.jpg";
 import CarneAves from "../../assets/carne-aves.jpg";
 
 import api from "../../api/api";
+import Loading from '../../components/loading/index';
+
 
 import Comentarios from "../../components/comentarios/index";
 import CriarComentarios from "../../components/Container/fazerComentario/index";
@@ -49,7 +51,7 @@ export default function InfoCerveja() {
   const [infoCerveja, setInfoCerveja] = useState([]);
   const [comentarioCount, setComentarioCount] = useState("");
   const [nota , setNota] = useState("");
-
+  const [ loader, setLoader] = useState("");
   const [inputValue, setInputValue] = useState("");
 
 
@@ -67,20 +69,29 @@ let value;
   };
 
   useEffect(() => {
+    setLoader("trueLoader");
     api.post("listCervejaId", data).then((response) => {
       setInfoCerveja(response.data);
+      setLoader("falseLoader");
+
     });
   }, []);
   useEffect(() => {
+    setLoader("trueLoader");
     api.post("countComentarios", {idCerveja: idCerveja}).then((response) => {
       setComentarioCount(response.data.contador);
+      setLoader("falseLoader");
+
     });
   }, []);
 
 
   useEffect(() => {
+    setLoader("trueLoader");
     api.post("notaCerveja", {idCerveja: idCerveja}).then((response) => {
       setNota(response.data.media);
+      setLoader("falseLoader");
+
     });
   }, []);
 
@@ -276,6 +287,8 @@ if(idVisitante < 1 ){
           </div>
         </div>
       </div>
+      <Loading status={loader}/>
+
       <Footer />
     </div>
   );

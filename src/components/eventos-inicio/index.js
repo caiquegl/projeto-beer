@@ -274,15 +274,17 @@ export default function Efeitos(){
                     <div id="cadastro-visi">
                         <form onSubmit={register}>
                             <div className="form-group">
-                                <label for="nome">Digite seu nome:</label>
-                                <input 
-                                type="text" 
-                                placeholder="Digite seu nome" 
-                                className="form-control" 
-                                required
-                                value={nome}
-                                onChange={e => setNome(e.target.value)}
-                                />
+                                
+                                    <label for="nome">Digite seu nome:</label>
+                                    <input 
+                                    type="text" 
+                                    placeholder="Digite seu nome" 
+                                    className="form-control" 
+                                    required
+                                    value={nome}
+                                    onChange={e => setNome(e.target.value)}
+                                    />
+                                
                             </div>
                             <div className="form-group">
                                 <label for="email">Digite seu email:</label>
