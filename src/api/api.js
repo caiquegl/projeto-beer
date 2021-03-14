@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://server-beer.herokuapp.com',
+    baseURL: 'https://server-beergl.herokuapp.com/',
 });
 
 export default api;
